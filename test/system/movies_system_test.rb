@@ -2,6 +2,8 @@ require "application_system_test_case"
 
 class MoviesSystemTest < ApplicationSystemTestCase
   test "visiting the show" do
+    attributes = { title: "Parasite", director: "Bong Joon-ho" }
+    Movie.new(attributes)
     # As a user,
     # when I visit /movies/1
     visit("/movies/1") # visit("/movies/1")
