@@ -12,4 +12,17 @@ class MoviesSystemTest < ApplicationSystemTestCase
     # I also see the name of the director "Bong Joon-ho"
     assert_text movie.director
   end
+
+  test "visiting the index" do
+    movie_1 = Movie.create(title: "Parasite", director: "Bong Joon-ho")
+    movie_2 = Movie.create(title: "Titanic", director: "James Cameron")
+
+    visit("/movies") # visit("/movies/1")
+
+    assert_text movie_1.title
+    assert_text movie_1.director
+
+    assert_text movie_2.title
+    assert_text movie_2.director
+  end
 end
